@@ -1,0 +1,6 @@
+framework module Pods_Ambev_AmbevUITests {
+  umbrella header "Pods-Ambev-AmbevUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
