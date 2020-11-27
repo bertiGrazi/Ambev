@@ -8,20 +8,23 @@
 import UIKit
 import Alamofire
 
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableViewChalengeAfroDev: UITableView!
-    
     var arrayAmbev = [Ambev] ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         tableViewChalengeAfroDev.delegate = self
         tableViewChalengeAfroDev.dataSource = self
         
         carregarAPI()
+        
     }
-
+    
+    
     func atualizandoTableView(array: [Ambev]) {
         self.arrayAmbev = array
         self.tableViewChalengeAfroDev.reloadData()
@@ -35,14 +38,19 @@ class ViewController: UIViewController {
                 
                 for item in arrayDictionary {
                     let produto = Ambev(fromDictionary: item)
+                    
+                        
                     novoArray.append(produto)
                     print(produto)
+                    
+                    
                 }
                 
                 self.atualizandoTableView(array: novoArray)
             }
         }
     }
+    
 }
 extension ViewController: UITableViewDelegate {
     
